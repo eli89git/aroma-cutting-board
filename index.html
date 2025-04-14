@@ -18,27 +18,26 @@
       position: fixed;
       top: 50%;
       left: 50%;
-      /* Adjust the scale value here (< 1 means zoomed-out) */
       transform: translate(-50%, -50%) scale(1);
       min-width: 100%;
       min-height: 100%;
       object-fit: cover;
       object-position: center center;
-      z-index: -1;
+      z-index: -2;
     }
 
-      /* Dark overlay styling */
+    /* Dark overlay styling */
     .video-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.9); /* Adjust opacity as desired */
+      background: rgba(0, 0, 0, 0.4); /* Adjust opacity as desired */
       z-index: -1;
       pointer-events: none;
     }
-
+    
     /* Mobile-specific adjustments */
     @media only screen and (max-width: 768px) {
       .background-video {
@@ -64,7 +63,7 @@
     /* Overlay content styling */
     .content {
       position: relative;
-      z-index: 1;
+      z-index: 3;
       text-align: center;
       padding: 2rem;
       color: white;
@@ -92,7 +91,7 @@
 <body>
   <!-- Business Logo -->
   <div class="logo">
-    <img src="YOUR_LOGO_URL.png" alt="Business Logo">
+    <img src="logo.png" alt="Business Logo">
   </div>
   
   <!-- Background video element -->
@@ -100,6 +99,9 @@
     <source src="C0025_4.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  
+  <!-- Dark overlay -->
+  <div class="video-overlay"></div>
 
   <!-- Content overlay -->
   <div class="content">
