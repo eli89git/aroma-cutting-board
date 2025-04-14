@@ -5,25 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Aroma Cutting Board - Preparation Videos</title>
   <style>
-    /* Ensure the page covers the full viewport */
+    /* Reset default styles */
     body, html {
       margin: 0;
       padding: 0;
       height: 100%;
+      overflow: hidden;
     }
-    /* Style for the full-screen background video */
+    
+    /* Background video styling */
     .background-video {
       position: fixed;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
+      /* Adjust the scale value here (< 1 means zoomed-out) */
+      transform: translate(-50%, -50%) scale(0.95);
       min-width: 100%;
       min-height: 100%;
-      object-fit: contain;
+      object-fit: cover;
       object-position: center center;
       z-index: -1;
     }
-    /* Container for the overlay content */
+
+    /* Mobile-specific adjustments */
+    @media only screen and (max-width: 768px) {
+      .background-video {
+        object-fit: contain;
+        width: 100vw;
+        height: auto;
+        background: black;
+      }
+    }
+    
+    /* Business logo styling */
+    .logo {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 2;
+    }
+    .logo img {
+      max-width: 120px;
+      height: auto;
+    }
+    
+    /* Overlay content styling */
     .content {
       position: relative;
       z-index: 1;
@@ -32,7 +58,9 @@
       color: white;
       font-family: Arial, sans-serif;
     }
-    /* Styling for links/buttons */
+    .content h1 {
+      margin-top: 60px;
+    }
     a {
       display: inline-block;
       margin: 0.5em;
@@ -50,9 +78,14 @@
   </style>
 </head>
 <body>
+  <!-- Business Logo -->
+  <div class="logo">
+    <img src="YOUR_LOGO_URL.png" alt="Business Logo">
+  </div>
+  
   <!-- Background video element -->
   <video class="background-video" autoplay loop muted playsinline>
-    <source src="C0025_4.mp4" type="video/mp4">
+    <source src="YOUR_VIDEO_URL.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
