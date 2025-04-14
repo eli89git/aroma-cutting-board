@@ -27,6 +27,18 @@
       z-index: -1;
     }
 
+      /* Dark overlay styling */
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Adjust opacity as desired */
+      z-index: -1;
+      pointer-events: none;
+    }
+
     /* Mobile-specific adjustments */
     @media only screen and (max-width: 768px) {
       .background-video {
